@@ -6,31 +6,31 @@ class Program
 {
     static void Main()
     {
-        // Укажите путь к каталогу, который вы хотите проанализировать
+       //Пример направления
         string directoryPath = @"C:\ExampleDirectory";
 
-        // Создаем коллекцию для хранения расширений файлов и их количества
+       
         Dictionary<string, int> fileExtensionsCount = new Dictionary<string, int>();
 
-        // Проверяем, существует ли указанный каталог
+       
         if (Directory.Exists(directoryPath))
         {
-            // Получаем все файлы в указанном каталоге
+            
             string[] files = Directory.GetFiles(directoryPath);
 
-            // Проходимся по каждому файлу
+
             foreach (string filePath in files)
             {
-                // Получаем информацию о файле
+                
                 FileInfo fileInfo = new FileInfo(filePath);
 
-                // Получаем расширение файла (если есть)
+                
                 string fileExtension = fileInfo.Extension;
 
-                // Игнорируем файлы без расширения
+               
                 if (!string.IsNullOrEmpty(fileExtension))
                 {
-                    // Добавляем или обновляем счетчик для данного расширения файла
+                   
                     if (fileExtensionsCount.ContainsKey(fileExtension))
                     {
                         fileExtensionsCount[fileExtension]++;
@@ -42,7 +42,7 @@ class Program
                 }
             }
 
-            // Выводим результаты в виде таблицы
+            
             Console.WriteLine("{0,-20} {1,-10}", "Расширение файла", "Количество");
             Console.WriteLine(new string('-', 30));
 
@@ -53,7 +53,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Указанный каталог не существует.");
+            Console.WriteLine("Указанный каталог не существует :((((((((((((((((.");
         }
     }
 }
